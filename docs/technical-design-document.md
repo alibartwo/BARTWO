@@ -24,22 +24,24 @@ This **Technical Design Document (TDD)** outlines the architectural, technologic
 ## 3. Architecture and Technology Stack
 
 ### 3.1 High-Level Architecture
-┌───────────────────────┐
-│     Local Dev Env     │
-│ Nuxt + Node + Tools   │
-└───────────┬───────────┘
-│
-▼
-┌──────────────────────┐
-│  Static Site Output  │  (Generated via Nuxt SSG)
-│     (HTML/CSS/JS)    │
-└───────────┬──────────┘
-│
-▼
-┌──────────────────────┐
-│      cPanel Host     │
-│ (Static Asset Serve) │
-└──────────────────────┘
+```plaintext
+┌──────────────────────────┐
+│      Local Dev Env       │
+│   Nuxt + Node + Tools    │
+└────────────┬─────────────┘
+             │
+             ▼
+┌──────────────────────────┐
+│    Static Site Output    │  # Generated via Nuxt SSG
+│      (HTML/CSS/JS)       │
+└────────────┬─────────────┘
+             │
+             ▼
+┌──────────────────────────┐
+│      cPanel Host         │
+│  (Static Asset Serve)    │
+└──────────────────────────┘
+```
 
 1. **Development Layer**  
    - Nuxt 3 (with SSG mode) runs in a local environment.  
@@ -71,6 +73,7 @@ This **Technical Design Document (TDD)** outlines the architectural, technologic
 ### 4.1 Directory Structure
 
 Below is an example directory structure for a **Nuxt 3** project configured for SSG:
+```plaintext
 bartwo-website/
 ├─ .nuxt/               # Auto-generated folder (ignored in version control)
 ├─ node_modules/
@@ -93,6 +96,7 @@ bartwo-website/
 ├─ package.json         # Project dependencies/scripts
 ├─ README.md            # Project documentation
 └─ tsconfig.json        # TypeScript config (if using TS)
+```
 
 ### 4.2 Key Configuration Files
 
